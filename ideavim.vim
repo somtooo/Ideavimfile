@@ -144,12 +144,77 @@ let g:WhichKeyDesc_GitVcs = "<leader>g +git"
 let g:WhichKeyDesc_GitVcs_Rebase = "<leader>gr git-rebase"
 map <leader>gr <Action>(Git.Rebase)
 
+"Git commit open tool window
+map <leader>gc <Action>(ActivateCommitToolWindow)
+
+
 " Leader
 " Activate terminal window
 let g:WhichKeyDesc_Leader_OpenShell2 = "<leader>' open-shell"
 map <leader>'    <Action>(ActivateTerminalToolWindow)
 
 
-" Refactorings
+" Debug
+let g:WhichKeyDesc_Major_Debug = "<leader>d +debug"
+
+" View Breakpoints
+let g:WhichKeyDesc_Major_Debug_ViewBreakpoints = "<leader>dB view-breakpoints"
+map <leader>dB <Action>(ViewBreakpoints)
+
+" Toggle breakpoint
+let g:WhichKeyDesc_Major_Debug_ToggleBreakpoint = "<leader>db toggle-breakpoint"
+map <leader>db <Action>(ToggleLineBreakpoint)
+
+" Clear all breakpoints
+let g:WhichKeyDesc_Major_Debug_ClearAllBreakpoints = "<leader>dC clear-all-breakpoints"
+map <leader>dC <Action>(Debugger.RemoveAllBreakpointsInFile)
+
+" Continue (Go to next breakpoint). 'c' is the same as gdb.
+let g:WhichKeyDesc_Major_Debug_Continue = "<leader>dc continue"
+map <leader>dc <Action>(Resume)
 
 " Debug
+let g:WhichKeyDesc_Major_Debug_Debug = "<leader>dD debug"
+map <leader>dD <Action>(Debug)
+
+" Debug class
+let g:WhichKeyDesc_Major_Debug_DebugClass = "<leader>dd debug-class"
+map <leader>dd <Action>(DebugClass)
+
+" Next (Step over). 's' is the same as gdb
+let g:WhichKeyDesc_Major_Debug_StepOver = "<leader>dn step-over"
+map <leader>dn <Action>(StepOver)
+
+" Step out (same as "finish" in gdb).
+let g:WhichKeyDesc_Major_Debug_StepOut = "<leader>do step-out"
+map <leader>do <Action>(StepOut)
+
+" Select configuration and debug
+let g:WhichKeyDesc_Major_Debug_SelectDebugConfiguration = "<leader>dr select-debug-configuration"
+map <leader>dr <Action>(ChooseDebugConfiguration)
+
+" Step (Step into). 's' is the same as gdb.
+let g:WhichKeyDesc_Major_Debug_StepInto = "<leader>ds step-into"
+map <leader>ds <Action>(StepInto)
+
+
+" Run
+let g:WhichKeyDesc_Major_Run = "<leader>r +run"
+let g:WhichKeyDesc_Major_Run_Class = "<leader>rc run-class"
+map <leader>rc <Action>(RunClass)
+
+
+" Refactorings
+let g:WhichKeyDesc_Refactoring = "<leader>R +refactoring"
+
+" Choose a refactoring action
+let g:WhichKeyDesc_Refactoring_ChooseRefactoringAction = "<leader>Ra choose-refactoring-action"
+map <leader>Ra <Action>(Refactorings.QuickListPopupAction)
+
+" Optimize imports
+let g:WhichKeyDesc_Refactoring_OptimizeImports = "<leader>Ri optimize-imports"
+map <leader>Ri <Action>(OptimizeImports)
+
+" Reformat Code
+let g:WhichKeyDesc_Refactoring_ReformatCode = "<leader>Rc reformat-code"
+map <leader>Rc <Action>(ReformatCode)
